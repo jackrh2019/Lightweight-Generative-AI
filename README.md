@@ -2,7 +2,27 @@
 
 A lightweight hands-on project for exploring diffusion-based generative AI on consumer GPUs.
 
-Current work focuses on Stable Diffusion, prompt engineering, anime image generation, and memory-efficient inference, with future extensions toward LoRA, ControlNet, and video generation.
+The project currently focuses on Stable Diffusion inference, prompt engineering, anime image generation, and memory-efficient inference, with future extensions toward LoRA, ControlNet, and video generation.
+
+## Models
+
+Two diffusion checkpoints are currently used:
+
+```text
+stable-diffusion-v1-5/stable-diffusion-v1-5
+```
+
+Used in the basic Stable Diffusion experiments, including pipeline inspection, seed comparison, prompt engineering, and anime-style generation.
+
+```text
+waifu-diffusion/wd-1-5-beta2
+```
+
+Used specifically in the Waifu Diffusion experiment:
+
+```text
+07_waifu_diffusion.py
+```
 
 ## Environment
 
@@ -44,23 +64,27 @@ Install other dependencies:
 pip install -r requirements.txt
 ```
 
-## Download Model
+## Download Waifu Diffusion
 
-Model weights are not included in this repository.
+The Stable Diffusion 1.5 experiments can download the model through Hugging Face when first executed.
 
-Download the anime diffusion checkpoint:
+For the Waifu Diffusion experiment, run:
 
 ```bash
 python download_wd15.py
 ```
 
-The model will be stored in:
+The checkpoint will be stored in:
 
 ```text
 models/wd-1-5-beta2/
 ```
 
+Large model weights are not included in this Git repository.
+
 ## Experiments
+
+### Stable Diffusion 1.5
 
 Inspect the Stable Diffusion pipeline:
 
@@ -74,22 +98,42 @@ Run random seed experiments:
 python 03_seed_experiment.py
 ```
 
+Run prompt / image generation experiments:
+
+```bash
+python 04_prompt_experiment.py
+```
+
 Generate anime portraits:
 
 ```bash
 python 05_anime_portrait.py
 ```
 
-Run full-body anime generation:
+Generate full-body anime images:
 
 ```bash
 python 06_anime_fullbody.py
 ```
 
-Run the Waifu Diffusion experiment:
+These experiments use:
+
+```text
+stable-diffusion-v1-5/stable-diffusion-v1-5
+```
+
+### Waifu Diffusion
+
+Run:
 
 ```bash
 python 07_waifu_diffusion.py
+```
+
+This experiment uses:
+
+```text
+waifu-diffusion/wd-1-5-beta2
 ```
 
 Generated images are saved under:
@@ -113,8 +157,8 @@ pipe.vae.enable_slicing()
 - [x] Pipeline inspection
 - [x] Seed experiments
 - [x] Prompt engineering
-- [x] Anime image generation
-- [ ] Anime-specific checkpoint integration
+- [x] Anime-style generation with SD 1.5
+- [x] Waifu Diffusion checkpoint experiment
 - [ ] LoRA fine-tuning
 - [ ] ControlNet
 - [ ] Image-to-video generation
