@@ -1,4 +1,4 @@
-# Lightweight Generative AI Lab
+# Lightweight Generative AI
 
 A lightweight hands-on project for exploring diffusion-based generative AI on consumer GPUs.
 
