@@ -1,0 +1,8 @@
+torch==2.5.1
+torchvision==0.20.1
+diffusers==0.40.0
+transformers
+accelerate
+safetensors
+huggingface-hub
+Pillow==10.4.0
