@@ -1,30 +1,61 @@
 # Lightweight Generative AI Lab
 
-Hands-on experiments with diffusion-based generative models on consumer GPUs.
+A lightweight hands-on project for learning and experimenting with diffusion-based generative AI on consumer GPUs.
 
-## Experiments
+The project currently focuses on Stable Diffusion image generation, prompt engineering, sampling experiments, and anime-specific diffusion checkpoints. It is designed to gradually expand toward LoRA fine-tuning, controllable generation, and video diffusion.
 
-- Stable Diffusion 1.5 inference
-- Stable Diffusion architecture inspection
-- Random seed experiments
+The experiments were developed and tested on an NVIDIA RTX 3070 Laptop GPU with 8 GB VRAM.
+
+---
+
+## 1. Project Goals
+
+This repository is built for practical exploration of modern generative AI technologies, including:
+
+- Stable Diffusion
+- Latent Diffusion Models
+- VAE
+- CLIP text conditioning
+- U-Net denoising
+- Diffusion schedulers
 - Prompt engineering
-- Anime image generation
+- Negative prompts
+- Random seed analysis
 - Anime-specific diffusion checkpoints
+- LoRA fine-tuning
+- Controllable generation
+- Image-to-video generation
+- Video diffusion
 
-## Environment
+The long-term goal is to build a lightweight generative AI pipeline that can run on consumer GPUs and gradually extend from image generation to controllable video generation.
 
-- Python 3.10
-- PyTorch 2.5.1
-- CUDA 12.4
-- NVIDIA RTX 3070 Laptop GPU 8GB
-- Hugging Face Diffusers
+---
 
-## Roadmap
+## 2. Current Experiments
 
-- [x] Stable Diffusion inference
-- [x] Prompt engineering
-- [x] Anime checkpoint inference
-- [ ] LoRA fine-tuning
-- [ ] ControlNet
-- [ ] Image-to-video generation
-- [ ] Video diffusion
+### Stable Diffusion 1.5 Inference
+
+Basic text-to-image generation using Stable Diffusion 1.5.
+
+Pipeline:
+
+```text
+Prompt
+  ↓
+Tokenizer
+  ↓
+CLIP Text Encoder
+  ↓
+Text Embedding
+  ↓
+Random Latent Noise
+  ↓
+U-Net Denoising
+  ↓
+Scheduler
+  ↓
+Latent Representation
+  ↓
+VAE Decoder
+  ↓
+Generated Image
